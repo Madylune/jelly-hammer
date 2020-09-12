@@ -3733,8 +3733,8 @@ GameObject:
   - component: {fileID: 923523289}
   - component: {fileID: 923523288}
   - component: {fileID: 923523287}
-  - component: {fileID: 923523286}
   - component: {fileID: 923523291}
+  - component: {fileID: 923523286}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -3751,7 +3751,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 923523285}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fa3757ae89446b340b28a4e1e7538356, type: 3}
+  m_Script: {fileID: 11500000, guid: 6cfc374c5bfa149179b7a02738478be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 923523291}
