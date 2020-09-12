@@ -17,7 +17,22 @@ public class Player : Character
     }
 
     [SerializeField]
+    private int attackDamage = 50;
+
+    [SerializeField]
     private Rigidbody2D rb;
+
+    [SerializeField]
+    private Transform attackPoint;
+
+    [SerializeField]
+    private float attackRangeX;
+
+    [SerializeField]
+    private float attackRangeY;
+
+    [SerializeField]
+    private LayerMask enemyLayers;
 
     private bool isAttacking;
 
@@ -70,7 +85,23 @@ public class Player : Character
         {
             animator.SetTrigger("Attack");
             rb.velocity = Vector2.zero;
+
+            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRangeX, attackRangeY), 0, enemyLayers);
+
+            foreach (Collider2D enemy in hitEnemies)
+            {
+                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+            }
         }
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        if (attackPoint == null)
+            return;
+
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireCube(attackPoint.position, new Vector3(attackRangeX, attackRangeY, 1));
     }
 
     private void HandleInput()

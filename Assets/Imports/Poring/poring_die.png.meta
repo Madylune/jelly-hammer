@@ -1,0 +1,895 @@
+fileFormatVersion: 2
+guid: 5560c9b6674ac47bda8a446d47ef4d26
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 9108841039963854093
+    second: poring_die_0
+  - first:
+      213: 3286975349784359626
+    second: poring_die_1
+  - first:
+      213: 7946255382082733368
+    second: poring_die_2
+  - first:
+      213: -8451049467266737988
+    second: poring_die_3
+  - first:
+      213: 6317493039148170148
+    second: poring_die_4
+  - first:
+      213: 1608687286026362806
+    second: poring_die_5
+  - first:
+      213: -6494961819814910670
+    second: poring_die_6
+  - first:
+      213: -7865333528187133105
+    second: poring_die_7
+  - first:
+      213: -7615196557235384649
+    second: poring_die_8
+  - first:
+      213: 441471141282563142
+    second: poring_die_9
+  - first:
+      213: -5824599584519655640
+    second: poring_die_10
+  - first:
+      213: -3433534367522722016
+    second: poring_die_11
+  - first:
+      213: 5346760913002092739
+    second: poring_die_12
+  - first:
+      213: 3661133456507822576
+    second: poring_die_13
+  - first:
+      213: -868353564219994598
+    second: poring_die_14
+  - first:
+      213: -6234641180202662823
+    second: poring_die_15
+  - first:
+      213: -3815706723261222772
+    second: poring_die_16
+  - first:
+      213: 5472708737745544192
+    second: poring_die_17
+  - first:
+      213: -5594773874462080192
+    second: poring_die_18
+  - first:
+      213: 1839406178590183276
+    second: poring_die_19
+  - first:
+      213: 8219875158150779172
+    second: poring_die_20
+  - first:
+      213: 8291432764484141084
+    second: poring_die_21
+  - first:
+      213: -2778713540661654068
+    second: poring_die_22
+  - first:
+      213: 1107722462212731520
+    second: poring_die_23
+  - first:
+      213: 6665046320126163536
+    second: poring_die_24
+  - first:
+      213: -5482331504505941978
+    second: poring_die_25
+  - first:
+      213: -2990619044576001198
+    second: poring_die_26
+  - first:
+      213: 5234443078146506873
+    second: poring_die_27
+  - first:
+      213: -1402285399413791221
+    second: poring_die_28
+  - first:
+      213: -7593248231954868972
+    second: poring_die_29
+  - first:
+      213: -7573009431079314987
+    second: poring_die_30
+  - first:
+      213: 4936974906932042806
+    second: poring_die_31
+  - first:
+      213: -9048512628343530539
+    second: poring_die_32
+  - first:
+      213: -8387320993833030536
+    second: poring_die_33
+  - first:
+      213: 7307577134745500897
+    second: poring_die_34
+  - first:
+      213: -7134958326203082773
+    second: poring_die_35
+  - first:
+      213: 8044974168672296344
+    second: poring_die_36
+  - first:
+      213: -1064844808123773879
+    second: poring_die_37
+  - first:
+      213: 5090956673252390346
+    second: poring_die_38
+  - first:
+      213: -4901835044482682060
+    second: poring_die_39
+  - first:
+      213: 5855751258844265609
+    second: poring_die_40
+  - first:
+      213: 8465904877095905602
+    second: poring_die_41
+  - first:
+      213: 3079954958472702743
+    second: poring_die_42
+  - first:
+      213: 2710815014058373479
+    second: poring_die_43
+  - first:
+      213: -5480006705905111338
+    second: poring_die_44
+  - first:
+      213: 1461529233043446413
+    second: poring_die_45
+  - first:
+      213: 1282712791119645084
+    second: poring_die_46
+  - first:
+      213: 6099000518474379246
+    second: poring_die_47
+  - first:
+      213: -4179333203815400220
+    second: poring_die_48
+  - first:
+      213: 5960491265485988786
+    second: poring_die_49
+  - first:
+      213: 7538024294571502234
+    second: poring_die_50
+  - first:
+      213: 9136813578714338228
+    second: poring_die_51
+  - first:
+      213: 7315124898086436730
+    second: poring_die_52
+  - first:
+      213: -4482735549983834866
+    second: poring_die_53
+  - first:
+      213: -636453096415907503
+    second: poring_die_54
+  - first:
+      213: -1894897320624837785
+    second: poring_die_55
+  - first:
+      213: -4930544629798339027
+    second: poring_die_56
+  - first:
+      213: -399921644276540453
+    second: poring_die_57
+  - first:
+      213: -3666648102853422152
+    second: poring_die_58
+  - first:
+      213: -8955278213424809007
+    second: poring_die_59
+  - first:
+      213: 2637429446969283186
+    second: poring_die_60
+  - first:
+      213: 968655979802008973
+    second: poring_die_61
+  - first:
+      213: -579551048224114986
+    second: poring_die_62
+  - first:
+      213: 400434337295939641
+    second: poring_die_63
+  - first:
+      213: -6058732948303782377
+    second: poring_die_64
+  - first:
+      213: 5600905876608875971
+    second: poring_die_65
+  - first:
+      213: 2212772452776822370
+    second: poring_die_66
+  - first:
+      213: 1545398130444953296
+    second: poring_die_67
+  - first:
+      213: 7030813576469633770
+    second: poring_die_68
+  - first:
+      213: -4724719488924651087
+    second: poring_die_69
+  - first:
+      213: 5270855840026657095
+    second: poring_die_70
+  - first:
+      213: 866712912108627802
+    second: poring_die_71
+  - first:
+      213: -7458116894985025219
+    second: poring_die_72
+  - first:
+      213: -2607636447856055599
+    second: poring_die_73
+  - first:
+      213: -7750567027091892322
+    second: poring_die_74
+  - first:
+      213: 411757113726745844
+    second: poring_die_75
+  - first:
+      213: 2044950720415317267
+    second: poring_die_76
+  - first:
+      213: -3092369706353224569
+    second: poring_die_77
+  - first:
+      213: -2411673494423601979
+    second: poring_die_78
+  - first:
+      213: 4831658601450668782
+    second: poring_die_79
+  - first:
+      213: 7044182283924813034
+    second: poring_die_80
+  - first:
+      213: 7472337320851530961
+    second: poring_die_81
+  - first:
+      213: -1857144299550991498
+    second: poring_die_82
+  - first:
+      213: 3501529749537731230
+    second: poring_die_83
+  - first:
+      213: 5134168621819951642
+    second: poring_die_84
+  - first:
+      213: 5875698587394184785
+    second: poring_die_85
+  - first:
+      213: -8039428343467016204
+    second: poring_die_86
+  - first:
+      213: 4628736562988994714
+    second: poring_die_87
+  - first:
+      213: 141714292103946894
+    second: poring_die_88
+  - first:
+      213: 5019367668851207717
+    second: poring_die_89
+  - first:
+      213: 4865009815165928596
+    second: poring_die_90
+  - first:
+      213: 290865302402243275
+    second: poring_die_91
+  - first:
+      213: -7478314596501219959
+    second: poring_die_92
+  - first:
+      213: -8087255914715597542
+    second: poring_die_93
+  - first:
+      213: 7506708639329512112
+    second: poring_die_94
+  - first:
+      213: -2265622632915566130
+    second: poring_die_95
+  - first:
+      213: 1846946302826978185
+    second: poring_die_96
+  - first:
+      213: 4593385322255861184
+    second: poring_die_97
+  - first:
+      213: 1211272987397829280
+    second: poring_die_98
+  - first:
+      213: 3133354538335594805
+    second: poring_die_99
+  - first:
+      213: 2609181452936551312
+    second: poring_die_100
+  - first:
+      213: -5327634444437890786
+    second: poring_die_101
+  - first:
+      213: 2811089820812289891
+    second: poring_die_102
+  - first:
+      213: -8923642702431069526
+    second: poring_die_103
+  - first:
+      213: -7183432157133220650
+    second: poring_die_104
+  - first:
+      213: 2316977286926363417
+    second: poring_die_105
+  - first:
+      213: 2805798853250494056
+    second: poring_die_106
+  - first:
+      213: -1831767376924731182
+    second: poring_die_107
+  - first:
+      213: -7283431333488753050
+    second: poring_die_108
+  - first:
+      213: -611229982422213716
+    second: poring_die_109
+  - first:
+      213: -6791029069079170863
+    second: poring_die_110
+  - first:
+      213: -6906181085434640167
+    second: poring_die_111
+  - first:
+      213: 7498383925751983419
+    second: poring_die_112
+  - first:
+      213: 1356838373557594748
+    second: poring_die_113
+  - first:
+      213: -1301594156411078275
+    second: poring_die_114
+  - first:
+      213: 7993728318895832271
+    second: poring_die_115
+  - first:
+      213: -7873803114394560578
+    second: poring_die_116
+  - first:
+      213: -6773339260386486607
+    second: poring_die_117
+  - first:
+      213: 8643628351945975329
+    second: poring_die_118
+  - first:
+      213: -2768623847273912419
+    second: poring_die_119
+  - first:
+      213: 3078720588554870081
+    second: poring_die_120
+  - first:
+      213: 8807946795452202456
+    second: poring_die_121
+  - first:
+      213: -58737999742732144
+    second: poring_die_122
+  - first:
+      213: -8903223233141135979
+    second: poring_die_123
+  - first:
+      213: -7146304100129912202
+    second: poring_die_124
+  - first:
+      213: -9118073530473171753
+    second: poring_die_125
+  - first:
+      213: -7186287936510320495
+    second: poring_die_126
+  - first:
+      213: -5224970712873970655
+    second: poring_die_127
+  - first:
+      213: -1785817419172435138
+    second: poring_die_128
+  - first:
+      213: -639705013348945608
+    second: poring_die_129
+  - first:
+      213: 2371662018967374236
+    second: poring_die_130
+  - first:
+      213: -7135473250796540343
+    second: poring_die_131
+  - first:
+      213: 4363373526309368692
+    second: poring_die_132
+  - first:
+      213: -3345353739398049937
+    second: poring_die_133
+  - first:
+      213: -1678127387738498713
+    second: poring_die_134
+  - first:
+      213: 8120070612331518134
+    second: poring_die_135
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: poring_die_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 873
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d059b864aaa196e70800000000000000
+      internalID: 9108841039963854093
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_1
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 873
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac2bc5d5aaead9d20800000000000000
+      internalID: 3286975349784359626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_2
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 873
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835c39f3b25c64e60800000000000000
+      internalID: 7946255382082733368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_3
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 873
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb8df4cf847d7ba80800000000000000
+      internalID: -8451049467266737988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_4
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 873
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4abfd65927e3ca750800000000000000
+      internalID: 6317493039148170148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 582
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bfd94e3094335610800000000000000
+      internalID: 1608687286026362806
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_6
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 582
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 235253cf2a24dd5a0800000000000000
+      internalID: -6494961819814910670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_7
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 582
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f43af6414d8b8d290800000000000000
+      internalID: -7865333528187133105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_8
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 582
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7be05370413615690800000000000000
+      internalID: -7615196557235384649
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_9
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 582
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 644cbbaf9ab602600800000000000000
+      internalID: 441471141282563142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 291
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82f61d5b98dda2fa0800000000000000
+      internalID: -5824599584519655640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_11
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 291
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02f66b33fa2a950d0800000000000000
+      internalID: -3433534367522722016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_12
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 291
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c8de66d8b2833a40800000000000000
+      internalID: 5346760913002092739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_13
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 291
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f1627e2b75fec230800000000000000
+      internalID: 3661133456507822576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_14
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 291
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1e0939b80df2f3f0800000000000000
+      internalID: -868353564219994598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9548fff01ea1a79a0800000000000000
+      internalID: -6234641180202662823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: poring_die_16
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 0
+        width: 302
+        height: 291
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c80f1f0a3f2eb0bc0800000000000000
+      internalID: -3815706723261222772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
