@@ -4,6 +4,10 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+    int maxHealth = 100;
+
+    int currentHealth;
+
     protected Animator animator;
 
     protected SpriteRenderer spriteRenderer;
@@ -20,6 +24,31 @@ public abstract class Character : MonoBehaviour
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         CheckPointPosition = transform.position;
+        currentHealth = maxHealth;
+    }
+
+    public void TakeDamage(int damage)
+    {
+        currentHealth -= damage;
+
+        animator.SetTrigger("Hurt");
+
+        if (currentHealth <= 0)
+        {
+            StartCoroutine(Die());
+        }
+    }
+
+    private IEnumerator Die()
+    {
+        animator.SetBool("IsDead", true);
+
+        GetComponent<Collider2D>().enabled = false;
+        this.enabled = false;
+
+        yield return new WaitForSeconds(2);
+
+        Destroy(gameObject);
     }
 
     public void Flip(float velocity)
