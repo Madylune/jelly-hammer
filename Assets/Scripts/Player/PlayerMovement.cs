@@ -15,18 +15,26 @@ public class PlayerMovement : MonoBehaviour
 
 	private Vector3 CheckPointPosition;
 
-	private bool isDead = false;
+    private bool isAttacking;
 
+	private bool isDead = false;
 
 	private void Start ()
 	{
 		CheckPointPosition = transform.position;
 	}
 
+    private void Update()
+    {
+        HandleInput();
+    }
+
     private void FixedUpdate()
     {
         Walk();
-	}
+        Attack();
+        ResetValues();
+    }
 
     private void Walk()
     {
@@ -36,7 +44,11 @@ public class PlayerMovement : MonoBehaviour
         Vector2 inputVector = new Vector2(inputX, inputY);
         Vector2 movement = inputVector * moveSpeed;
 
-        rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+
+        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        {
+            rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
+        }
 
         Flip(movement.x);
 
@@ -48,6 +60,28 @@ public class PlayerMovement : MonoBehaviour
         {
             animator.SetBool("IsWalking", true);
         }
+    }
+
+    private void Attack()
+    {
+        if (isAttacking && !animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
+        {
+            animator.SetTrigger("Attack");
+            rb.velocity = Vector2.zero;
+        }
+    }
+
+    private void HandleInput()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+            isAttacking = true;
+        }
+    }
+
+    private void ResetValues()
+    {
+        isAttacking = false;
     }
 
     private void Flip(float velocity)
