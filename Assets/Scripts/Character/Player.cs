@@ -33,6 +33,9 @@ public class Player : Character
     private int bombs;
 
     [SerializeField]
+    private DropBomb dropBomb;
+
+    [SerializeField]
     private Rigidbody2D rb;
 
     [SerializeField]
@@ -130,6 +133,17 @@ public class Player : Character
         {
             isAttacking = true;
         }
+
+        if (Input.GetKeyDown(KeyCode.B))
+        {
+            DropBomb();
+        }
+    }
+
+    private void DropBomb()
+    {
+        Vector2 position = spriteRenderer.flipX ? new Vector2((transform.position.x + 1), transform.position.y) : new Vector2((transform.position.x - 1), transform.position.y);
+        Instantiate(dropBomb, position, Quaternion.identity);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

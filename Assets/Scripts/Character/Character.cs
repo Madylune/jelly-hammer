@@ -49,6 +49,11 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    public void Stun()
+    {
+        animator.SetTrigger("Stun");
+    }
+
     private IEnumerator Die()
     {
         animator.SetBool("IsDead", true);

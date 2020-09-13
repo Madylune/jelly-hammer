@@ -201,6 +201,9 @@ MonoBehaviour:
   attackDamage: 50
   score: 0
   diamonds: 0
+  bombs: 0
+  dropBomb: {fileID: 6257137950629017934, guid: 236aae7eee6f942ccada005ae41a0222,
+    type: 3}
   rb: {fileID: 1466005267209303400}
   attackPoint: {fileID: 1466005266845665125}
   attackRangeX: 3.52
