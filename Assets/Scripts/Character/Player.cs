@@ -16,8 +16,17 @@ public class Player : Character
         }
     }
 
+    public float MyScore { get => score; set => score = value; }
+    public int MyDiamonds { get => diamonds; set => diamonds = value; }
+
     [SerializeField]
     private int attackDamage = 50;
+
+    [SerializeField]
+    private float score;
+
+    [SerializeField]
+    private int diamonds;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -91,6 +100,13 @@ public class Player : Character
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
+
+                float points = enemy.GetComponent<Enemy>().MyPoints;
+
+                if (enemy.GetComponent<Enemy>().isDead)
+                {
+                    MyScore += points;
+                }
             }
         }
     }

@@ -4,6 +4,12 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
+    [SerializeField]
+    private string name;
+
+    [SerializeField]
+    private Sprite sprite;
+
     int maxHealth = 100;
 
     int currentHealth;
@@ -14,9 +20,12 @@ public abstract class Character : MonoBehaviour
 
     protected float moveSpeed = 3f;
 
-    protected bool isDead = false;
+    public bool isDead = false;
 
     protected Vector3 CheckPointPosition;
+
+    public string MyName { get => name; }
+    public Sprite MySprite { get => sprite; }
 
     public virtual void Start()
     {
@@ -42,6 +51,7 @@ public abstract class Character : MonoBehaviour
     private IEnumerator Die()
     {
         animator.SetBool("IsDead", true);
+        isDead = true;
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;

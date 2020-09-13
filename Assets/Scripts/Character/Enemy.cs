@@ -7,10 +7,13 @@ public class Enemy : Character
     private Vector2 moveSpot;
 
     [SerializeField]
+    private float points;
+
+    [SerializeField]
     private float minX, maxX, minY, maxY;
 
     [SerializeField]
-    private float startWaitTime;
+    private float startWaitTime; 
 
     private float waitTime;
 
@@ -20,6 +23,7 @@ public class Enemy : Character
     public float MyMaxX { get => maxX; }
     public float MyMinY { get => minY; }
     public float MyMaxY { get => maxY; }
+    public float MyPoints { get => points; }
 
     public override void Start()
     {

@@ -143,6 +143,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 479af10050e984bb2a9f3014b7897fe5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Jelly
+  sprite: {fileID: 0}
+  isDead: 0
+  points: 350
   minX: -12
   maxX: 12
   minY: -9
