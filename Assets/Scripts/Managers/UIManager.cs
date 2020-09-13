@@ -23,20 +23,22 @@ public class UIManager : MonoBehaviour
     private Image avatar;
 
     [SerializeField]
-    private Text username, score, diamond;
+    private Text username, score, diamonds, bombs;
 
     private void Start()
     {
         username.text = Player.MyInstance.MyName.ToUpper();
         avatar.sprite = Player.MyInstance.MySprite;
         score.text = Player.MyInstance.MyScore.ToString() + " pts";
-        diamond.text = Player.MyInstance.MyDiamonds.ToString();
+        diamonds.text = Player.MyInstance.MyDiamonds.ToString();
+        bombs.text = Player.MyInstance.MyBombs.ToString();
     }
 
     private void Update()
     {
         score.text = Player.MyInstance.MyScore.ToString() + " pts";
-        diamond.text = Player.MyInstance.MyDiamonds.ToString();
+        diamonds.text = Player.MyInstance.MyDiamonds.ToString();
+        bombs.text = Player.MyInstance.MyBombs.ToString();
     }
 
 }

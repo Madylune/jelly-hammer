@@ -18,6 +18,7 @@ public class Player : Character
 
     public float MyScore { get => score; set => score = value; }
     public int MyDiamonds { get => diamonds; set => diamonds = value; }
+    public int MyBombs { get => bombs; set => bombs = value; }
 
     [SerializeField]
     private int attackDamage = 50;
@@ -27,6 +28,9 @@ public class Player : Character
 
     [SerializeField]
     private int diamonds;
+
+    [SerializeField]
+    private int bombs;
 
     [SerializeField]
     private Rigidbody2D rb;
@@ -139,7 +143,7 @@ public class Player : Character
             }
             if (collisionName == "Bomb")
             {
-                //Add to bomb count
+                MyBombs++;
             }
             Destroy(collision.gameObject);
         }
