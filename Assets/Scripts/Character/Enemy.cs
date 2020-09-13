@@ -10,6 +10,9 @@ public class Enemy : Character
     private float points;
 
     [SerializeField]
+    private LootTable loots;
+
+    [SerializeField]
     private float minX, maxX, minY, maxY;
 
     [SerializeField]
@@ -24,6 +27,7 @@ public class Enemy : Character
     public float MyMinY { get => minY; }
     public float MyMaxY { get => maxY; }
     public float MyPoints { get => points; }
+    public LootTable MyLoots { get => loots; set => loots = value; }
 
     public override void Start()
     {
@@ -56,6 +60,19 @@ public class Enemy : Character
             else
             {
                 waitTime -= Time.deltaTime;
+            }
+        }
+    }
+
+    public void GetLoots()
+    {
+        if (MyLoots != null)
+        {
+            GameObject current = MyLoots.LootDrop();
+
+            if (current != null)
+            {
+                Instantiate(current.gameObject, transform.position, Quaternion.identity);
             }
         }
     }

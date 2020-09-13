@@ -20,7 +20,7 @@ public abstract class Character : MonoBehaviour
 
     protected float moveSpeed = 3f;
 
-    public bool isDead = false;
+    public bool isDead;
 
     protected Vector3 CheckPointPosition;
 
@@ -44,6 +44,7 @@ public abstract class Character : MonoBehaviour
 
         if (currentHealth <= 0)
         {
+            isDead = true;
             StartCoroutine(Die());
         }
     }
@@ -51,7 +52,11 @@ public abstract class Character : MonoBehaviour
     private IEnumerator Die()
     {
         animator.SetBool("IsDead", true);
-        isDead = true;
+
+        if (this is Enemy)
+        {
+            this.GetComponent<Enemy>().GetLoots();
+        }
 
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;

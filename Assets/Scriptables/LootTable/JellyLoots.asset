@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ccd9bb81e3e354b75967f2e755d75877, type: 3}
+  m_Name: JellyLoots
+  m_EditorClassIdentifier: 
+  loots:
+  - {fileID: 590470129057311800, guid: 0dc389cd98ca04765ad5ea8f463fa969, type: 3}
+  - {fileID: 3685738374661014, guid: 47c44658af04e4477a2c4af4a0732ded, type: 3}

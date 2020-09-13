@@ -195,7 +195,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6cfc374c5bfa149179b7a02738478be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  name: Typhon
+  sprite: {fileID: 21300000, guid: e480585590b117443974744d58ee2162, type: 3}
+  isDead: 0
   attackDamage: 50
+  score: 0
+  diamonds: 0
   rb: {fileID: 1466005267209303400}
   attackPoint: {fileID: 1466005266845665125}
   attackRangeX: 3.52

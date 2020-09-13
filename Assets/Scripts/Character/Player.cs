@@ -128,6 +128,23 @@ public class Player : Character
         }
     }
 
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Loot")
+        {
+            string collisionName = collision.GetComponent<Loot>().lootName;
+            if (collisionName == "Diamond")
+            {
+                MyDiamonds++;
+            }
+            if (collisionName == "Bomb")
+            {
+                //Add to bomb count
+            }
+            Destroy(collision.gameObject);
+        }
+    }
+
     private void ResetValues()
     {
         isAttacking = false;
