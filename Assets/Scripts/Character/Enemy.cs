@@ -72,8 +72,15 @@ public class Enemy : Character
 
             if (current != null)
             {
-                Instantiate(current.gameObject, transform.position, Quaternion.identity);
+                InstantiateLoot(current);
             }
         }
+    }
+
+    private void InstantiateLoot(GameObject _loot)
+    {
+        GameObject loot = Instantiate(_loot.gameObject, transform.position, Quaternion.identity);
+
+        Destroy(loot, 3f);
     }
 }
