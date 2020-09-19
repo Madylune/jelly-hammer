@@ -27,18 +27,24 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        username.text = Player.MyInstance.MyName.ToUpper();
-        avatar.sprite = Player.MyInstance.MySprite;
-        score.text = Player.MyInstance.MyScore.ToString() + " pts";
-        diamonds.text = Player.MyInstance.MyDiamonds.ToString();
-        bombs.text = Player.MyInstance.MyBombs.ToString();
+        if (Player.MyInstance != null)
+        {
+            username.text = Player.MyInstance.MyName.ToUpper();
+            avatar.sprite = Player.MyInstance.MySprite;
+            score.text = Player.MyInstance.MyScore.ToString() + " pts";
+            diamonds.text = Player.MyInstance.MyDiamonds.ToString();
+            bombs.text = Player.MyInstance.MyBombs.ToString();
+        }
     }
 
     private void Update()
     {
-        score.text = Player.MyInstance.MyScore.ToString() + " pts";
-        diamonds.text = Player.MyInstance.MyDiamonds.ToString();
-        bombs.text = Player.MyInstance.MyBombs.ToString();
+        if (Player.MyInstance != null)
+        {
+            score.text = Player.MyInstance.MyScore.ToString() + " pts";
+            diamonds.text = Player.MyInstance.MyDiamonds.ToString();
+            bombs.text = Player.MyInstance.MyBombs.ToString();
+        }
     }
 
 }

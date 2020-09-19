@@ -107,15 +107,13 @@ public class Player : Character
             foreach (Collider2D enemy in hitEnemies)
             {
                 enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-
-                float points = enemy.GetComponent<Enemy>().MyPoints;
-
-                if (enemy.GetComponent<Enemy>().isDead)
-                {
-                    MyScore += points;
-                }
             }
         }
+    }
+
+    public void EarnPoints(float _points)
+    {
+        MyScore += _points;
     }
 
     private void OnDrawGizmosSelected()

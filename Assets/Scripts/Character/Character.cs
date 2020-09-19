@@ -61,6 +61,7 @@ public abstract class Character : MonoBehaviour
         if (this is Enemy)
         {
             this.GetComponent<Enemy>().GetLoots();
+            Player.MyInstance.EarnPoints(((Enemy)this).MyPoints);
         }
 
         GetComponent<Collider2D>().enabled = false;
@@ -81,11 +82,5 @@ public abstract class Character : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
-    }
-
-    public void RespawnAtCheckpoint()
-    {
-        transform.position = CheckPointPosition;
-        isDead = false;
     }
 }

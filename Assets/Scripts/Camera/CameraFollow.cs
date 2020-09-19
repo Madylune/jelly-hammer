@@ -3,9 +3,6 @@
 public class CameraFollow : MonoBehaviour
 {
     [SerializeField]
-    private GameObject player;
-
-    [SerializeField]
     private float xMax;
 
     [SerializeField]
@@ -19,6 +16,9 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        transform.position = new Vector3(Mathf.Clamp(player.transform.position.x, xMin, xMax), Mathf.Clamp(player.transform.position.y, yMin, yMax), transform.position.z);
+        if (Player.MyInstance != null)
+        {
+            transform.position = new Vector3(Mathf.Clamp(Player.MyInstance.transform.position.x, xMin, xMax), Mathf.Clamp(Player.MyInstance.transform.position.y, yMin, yMax), transform.position.z);
+        }
     }
 }
