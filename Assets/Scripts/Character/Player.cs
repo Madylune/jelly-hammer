@@ -134,9 +134,10 @@ public class Player : Character
             isAttacking = true;
         }
 
-        if (Input.GetKeyDown(KeyCode.B))
+        if (Input.GetKeyDown(KeyCode.B) && bombs > 0)
         {
             DropBomb();
+            bombs--;
         }
     }
 

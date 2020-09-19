@@ -113,5 +113,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootObject: {fileID: 8030567951234425852}
-  lootChance: 80
+  lootChance: 20
   lootName: Diamond

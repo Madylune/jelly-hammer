@@ -26,7 +26,7 @@ public class DropBomb : MonoBehaviour
 
     private IEnumerator Explode()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(0.5f);
 
         anim.SetTrigger("Explose");
 
