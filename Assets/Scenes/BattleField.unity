@@ -123,6 +123,85 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &215056751
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 215056752}
+  - component: {fileID: 215056754}
+  - component: {fileID: 215056753}
+  m_Layer: 5
+  m_Name: PlayerName
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &215056752
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215056751}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 705546903}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 32.7, y: 97.3}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &215056753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215056751}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 15e973b524adf4a41a749f9436403631, type: 3}
+    m_FontSize: 20
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: Typhon
+--- !u!222 &215056754
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 215056751}
+  m_CullTransparentMesh: 0
 --- !u!1 &257377618
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +355,6 @@ GameObject:
   - component: {fileID: 464800354}
   - component: {fileID: 464800356}
   - component: {fileID: 464800357}
-  - component: {fileID: 464800358}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -350,18 +428,6 @@ MonoBehaviour:
   score: {fileID: 2002291183}
   diamonds: {fileID: 721821161}
   bombs: {fileID: 901853094}
---- !u!114 &464800358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 464800353}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a32f21e79723e48698c1653f4ecadcd1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &467055274
 GameObject:
   m_ObjectHideFlags: 0
@@ -3146,7 +3212,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 3
-      m_TileSpriteIndex: 3
+      m_TileSpriteIndex: 22
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3155,7 +3221,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 2
+      m_TileSpriteIndex: 21
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3164,7 +3230,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 20
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3290,7 +3356,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 5
-      m_TileSpriteIndex: 5
+      m_TileSpriteIndex: 19
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -3745,21 +3811,17 @@ Tilemap:
   - m_RefCount: 5
     m_Data: {fileID: 1864099964873702613, guid: 93434c16540784402a467923214e9492,
       type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -618165780189932142, guid: 93434c16540784402a467923214e9492,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -7030405467926796139, guid: 93434c16540784402a467923214e9492,
-      type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -8060379787993051669, guid: 93434c16540784402a467923214e9492,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 305
     m_Data: {fileID: -8006539617652239012, guid: 93434c16540784402a467923214e9492,
       type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -7074478131922836260, guid: 93434c16540784402a467923214e9492,
-      type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 5
     m_Data: {fileID: -5015173836993921709, guid: 93434c16540784402a467923214e9492,
       type: 3}
@@ -3794,14 +3856,18 @@ Tilemap:
     m_Data: {fileID: 0}
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -7074478131922836260, guid: 93434c16540784402a467923214e9492,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -618165780189932142, guid: 93434c16540784402a467923214e9492,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -7030405467926796139, guid: 93434c16540784402a467923214e9492,
+      type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -8060379787993051669, guid: 93434c16540784402a467923214e9492,
+      type: 3}
   - m_RefCount: 3
     m_Data: {fileID: 3181436179671273817, guid: 93434c16540784402a467923214e9492,
       type: 3}
@@ -4151,6 +4217,7 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 1188966702}
+  - {fileID: 215056752}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -20,9 +20,4 @@ public class PlayerNetworking : MonoBehaviour
             }
         }
     }
-
-    void Update()
-    {
-        
-    }
 }

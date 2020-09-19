@@ -16,9 +16,9 @@ public class CameraFollow : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (Player.MyInstance != null)
+        if (MyPlayer.MyInstance != null)
         {
-            transform.position = new Vector3(Mathf.Clamp(Player.MyInstance.transform.position.x, xMin, xMax), Mathf.Clamp(Player.MyInstance.transform.position.y, yMin, yMax), transform.position.z);
+            transform.position = new Vector3(Mathf.Clamp(MyPlayer.MyInstance.transform.position.x, xMin, xMax), Mathf.Clamp(MyPlayer.MyInstance.transform.position.y, yMin, yMax), transform.position.z);
         }
     }
 }

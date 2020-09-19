@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,5 +17,10 @@ public class GameManager : MonoBehaviour
             }
             return instance;
         }
+    }
+
+    private void Start()
+    {
+        PhotonNetwork.Instantiate("Player", transform.position, Quaternion.identity);
     }
 }

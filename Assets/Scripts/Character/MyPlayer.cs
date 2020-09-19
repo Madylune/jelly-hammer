@@ -1,16 +1,16 @@
 ﻿using UnityEngine;
 
-public class Player : Character
+public class MyPlayer : Character
 {
-    private static Player instance;
+    private static MyPlayer instance;
 
-    public static Player MyInstance
+    public static MyPlayer MyInstance
     {
         get
         {
             if (instance == null)
             {
-                instance = GameObject.FindObjectOfType<Player>();
+                instance = GameObject.FindObjectOfType<MyPlayer>();
             }
             return instance;
         }
