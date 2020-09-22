@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 public class MyPlayer : Character
 {
@@ -19,6 +20,7 @@ public class MyPlayer : Character
     public float MyScore { get => score; set => score = value; }
     public int MyDiamonds { get => diamonds; set => diamonds = value; }
     public int MyBombs { get => bombs; set => bombs = value; }
+    public int MyAttackDamage { get => attackDamage;  }
 
     [SerializeField]
     private int attackDamage = 50;
@@ -39,21 +41,13 @@ public class MyPlayer : Character
     private Rigidbody2D rb;
 
     [SerializeField]
-    private Transform attackPoint;
-
-    [SerializeField]
-    private float attackRangeX;
-
-    [SerializeField]
-    private float attackRangeY;
-
-    [SerializeField]
-    private LayerMask enemyLayers;
+    private GameObject attackHitBox;
 
     private bool isAttacking;
 
     public override void Start()
     {
+        attackHitBox.SetActive(false);
         base.Start();
     }
 
@@ -65,7 +59,7 @@ public class MyPlayer : Character
     private void FixedUpdate()
     {
         Walk();
-        Attack();
+        StartCoroutine(Attack());
         ResetValues();
     }
 
@@ -95,34 +89,27 @@ public class MyPlayer : Character
         }
     }
 
-    private void Attack()
+    private IEnumerator Attack()
     {
         if (isAttacking && !animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             animator.SetTrigger("Attack");
             rb.velocity = Vector2.zero;
 
-            Collider2D[] hitEnemies = Physics2D.OverlapBoxAll(attackPoint.position, new Vector2(attackRangeX, attackRangeY), 0, enemyLayers);
+            float attackHitBoxY = GetComponent<BoxCollider2D>().offset.y;
+            attackHitBox.GetComponent<BoxCollider2D>().offset = spriteRenderer.flipX ? new Vector2(-1.45f, attackHitBoxY) : new Vector2(1.45f, attackHitBoxY);
+            attackHitBox.SetActive(true);
 
-            foreach (Collider2D enemy in hitEnemies)
-            {
-                enemy.GetComponent<Enemy>().TakeDamage(attackDamage);
-            }
+            yield return new WaitForSeconds(.5f);
+
+            attackHitBox.SetActive(false);
+            isAttacking = false;
         }
     }
 
     public void EarnPoints(float _points)
     {
         MyScore += _points;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        if (attackPoint == null)
-            return;
-
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireCube(attackPoint.position, new Vector3(attackRangeX, attackRangeY, 1));
     }
 
     private void HandleInput()

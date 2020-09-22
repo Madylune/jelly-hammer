@@ -83,4 +83,12 @@ public class Enemy : Character
 
         Destroy(loot, 3f);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "AttackHitBox")
+        {
+            TakeDamage(collision.GetComponentInParent<MyPlayer>().MyAttackDamage);
+        }
+    }
 }
