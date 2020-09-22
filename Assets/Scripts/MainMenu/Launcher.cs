@@ -37,7 +37,7 @@ public class Launcher : MonoBehaviourPunCallbacks
 
     public override void OnJoinedRoom()
     {
-        print("Room Joined Success");
+        //print("Room Joined Success");
         PhotonNetwork.LoadLevel("BattleField");
     }
 

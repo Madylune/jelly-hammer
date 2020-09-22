@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class MyPlayer : Character
 {
@@ -21,6 +22,7 @@ public class MyPlayer : Character
     public int MyDiamonds { get => diamonds; set => diamonds = value; }
     public int MyBombs { get => bombs; set => bombs = value; }
     public int MyAttackDamage { get => attackDamage;  }
+    public Vector3 MySmoothMove { get => smoothMove; set => smoothMove = value; }
 
     [SerializeField]
     private int attackDamage = 50;
@@ -43,10 +45,16 @@ public class MyPlayer : Character
     [SerializeField]
     private GameObject attackHitBox;
 
+    [SerializeField]
+    private Text usernameText;
+
     private bool isAttacking;
+
+    private Vector3 smoothMove;
 
     public override void Start()
     {
+        usernameText.text = MyName;
         attackHitBox.SetActive(false);
         base.Start();
     }
@@ -124,6 +132,11 @@ public class MyPlayer : Character
             DropBomb();
             bombs--;
         }
+    }
+
+    public void SmoothMovement()
+    {
+        transform.position = Vector3.Lerp(transform.position, smoothMove, Time.deltaTime * 10);
     }
 
     private void DropBomb()
