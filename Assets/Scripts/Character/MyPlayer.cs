@@ -23,6 +23,12 @@ public class MyPlayer : Character
     public int MyBombs { get => bombs; set => bombs = value; }
     public int MyAttackDamage { get => attackDamage;  }
     public Vector3 MySmoothMove { get => smoothMove; set => smoothMove = value; }
+    public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
+    public Rigidbody2D MyRb { get => rb; set => rb = value; }
+    public float MyMoveSpeed { get => moveSpeed; set => moveSpeed = value; }
+
+    [SerializeField]
+    private float moveSpeed = 3f;
 
     [SerializeField]
     private int attackDamage = 50;
@@ -54,47 +60,19 @@ public class MyPlayer : Character
 
     public override void Start()
     {
-        usernameText.text = MyName;
         attackHitBox.SetActive(false);
         base.Start();
     }
 
     private void Update()
     {
-        HandleInput();
+        usernameText.text = MyName;
     }
 
     private void FixedUpdate()
     {
-        Walk();
         StartCoroutine(Attack());
         ResetValues();
-    }
-
-    private void Walk()
-    {
-        float inputX = Input.GetAxisRaw("Horizontal");
-        float inputY = Input.GetAxisRaw("Vertical");
-
-        Vector2 inputVector = new Vector2(inputX, inputY);
-        Vector2 movement = inputVector * moveSpeed;
-
-
-        if (!animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
-        {
-            rb.MovePosition(rb.position + movement * Time.fixedDeltaTime);
-        }
-
-        Flip(movement.x);
-
-        if (movement.x == 0 && movement.y == 0)
-        {
-            animator.SetBool("IsWalking", false);
-        }
-        else
-        {
-            animator.SetBool("IsWalking", true);
-        }
     }
 
     private IEnumerator Attack()
@@ -102,7 +80,7 @@ public class MyPlayer : Character
         if (isAttacking && !animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
         {
             animator.SetTrigger("Attack");
-            rb.velocity = Vector2.zero;
+            MyRb.velocity = Vector2.zero;
 
             float attackHitBoxY = GetComponent<BoxCollider2D>().offset.y;
             attackHitBox.GetComponent<BoxCollider2D>().offset = spriteRenderer.flipX ? new Vector2(-1.45f, attackHitBoxY) : new Vector2(1.45f, attackHitBoxY);
@@ -120,29 +98,30 @@ public class MyPlayer : Character
         MyScore += _points;
     }
 
-    private void HandleInput()
-    {
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            isAttacking = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.B) && bombs > 0)
-        {
-            DropBomb();
-            bombs--;
-        }
-    }
-
     public void SmoothMovement()
     {
-        transform.position = Vector3.Lerp(transform.position, smoothMove, Time.deltaTime * 10);
+        transform.position = Vector3.Lerp(transform.position, MySmoothMove, Time.deltaTime * 10);
+        Flip(MySmoothMove.x);
+        AnimateWalk(MySmoothMove);
     }
 
-    private void DropBomb()
+    public void AnimateWalk(Vector2 move)
+    {
+        if (move.x == 0 && move.y == 0)
+        {
+            animator.SetBool("IsWalking", false);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", true);
+        }
+    }
+
+    public void DropBomb()
     {
         Vector2 position = spriteRenderer.flipX ? new Vector2((transform.position.x + 1), transform.position.y) : new Vector2((transform.position.x - 1), transform.position.y);
         Instantiate(dropBomb, position, Quaternion.identity);
+        bombs--;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

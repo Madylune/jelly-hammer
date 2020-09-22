@@ -18,13 +18,11 @@ public abstract class Character : MonoBehaviour
 
     protected SpriteRenderer spriteRenderer;
 
-    protected float moveSpeed = 3f;
-
     public bool isDead;
 
     protected Vector3 CheckPointPosition;
 
-    public string MyName { get => name; }
+    public string MyName { get => name; set => name = value; }
     public Sprite MySprite { get => sprite; }
 
     public virtual void Start()

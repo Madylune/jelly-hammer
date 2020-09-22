@@ -37,7 +37,7 @@ public class DropBomb : MonoBehaviour
         {
             if (obj.tag == "Player")
             {
-                MyPlayer.MyInstance.Stun();
+                obj.gameObject.GetComponent<MyPlayer>().Stun();
             }
             if (obj.tag == "Enemy")
             {

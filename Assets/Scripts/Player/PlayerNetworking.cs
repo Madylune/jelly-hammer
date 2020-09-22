@@ -9,20 +9,32 @@ public class PlayerNetworking : MonoBehaviourPun, IPunObservable
 
     private PhotonView pv;
 
-    private MyPlayer otherPlayer;
+    private MyPlayer myPlayer;
 
     void Start()
     {
         pv = GetComponent<PhotonView>();
-        if (!pv.IsMine)
+        if (pv.IsMine)
         {
-            Debug.Log("ici");
+            myPlayer = GetComponent<MyPlayer>();
+            myPlayer.MyName = PhotonNetwork.NickName;
+        }
+        else
+        {
             foreach (var script in scriptsToIgnore)
             {
                 script.enabled = false;
             }
-            otherPlayer.GetComponent<MyPlayer>();
-            otherPlayer.SmoothMovement();
+            myPlayer = GetComponent<MyPlayer>();
+            myPlayer.MyName = pv.Owner.NickName;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        if (!pv.IsMine)
+        {
+            myPlayer.SmoothMovement();
         }
     }
 
@@ -34,7 +46,7 @@ public class PlayerNetworking : MonoBehaviourPun, IPunObservable
         }
         else if (stream.IsReading)
         {
-            otherPlayer.MySmoothMove = (Vector3) stream.ReceiveNext();
+            myPlayer.MySmoothMove = (Vector3) stream.ReceiveNext();
         }
     }
 }

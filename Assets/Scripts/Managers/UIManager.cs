@@ -41,6 +41,7 @@ public class UIManager : MonoBehaviour
     {
         if (MyPlayer.MyInstance != null)
         {
+            username.text = MyPlayer.MyInstance.MyName.ToUpper();
             score.text = MyPlayer.MyInstance.MyScore.ToString() + " pts";
             diamonds.text = MyPlayer.MyInstance.MyDiamonds.ToString();
             bombs.text = MyPlayer.MyInstance.MyBombs.ToString();
