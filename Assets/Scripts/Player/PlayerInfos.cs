@@ -30,6 +30,22 @@ public class PlayerInfos : MonoBehaviour
             if (character.name == characterName)
             {
                 character.Select();
+                character.transform.GetChild(0).gameObject.SetActive(true);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        foreach (Button character in characterButtons)
+        {
+            if (character.name == characterName)
+            {
+                character.transform.GetChild(0).gameObject.SetActive(true);
+            }
+            else
+            {
+                character.transform.GetChild(0).gameObject.SetActive(false);
             }
         }
     }
