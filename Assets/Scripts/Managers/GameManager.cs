@@ -19,8 +19,13 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    private readonly string selectedCharacter = "SelectedCharacter";
+
     private void Start()
     {
-        PhotonNetwork.Instantiate("Player", transform.position, Quaternion.identity);
+        string characterName;
+        characterName = PlayerPrefs.GetString(selectedCharacter);
+
+        PhotonNetwork.Instantiate(characterName, transform.position, Quaternion.identity);
     }
 }

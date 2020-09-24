@@ -15,6 +15,31 @@ public class PlayerInfos : MonoBehaviour
     [SerializeField]
     private Text usernameOutput;
 
+    [SerializeField]
+    private Button[] characterButtons;
+
+    private string characterName;
+
+    private readonly string selectedCharacter = "SelectedCharacter";
+
+    private void Awake()
+    {
+        characterName = PlayerPrefs.GetString(selectedCharacter);
+        foreach (Button character in characterButtons)
+        {
+            if (character.name == characterName)
+            {
+                character.Select();
+            }
+        }
+    }
+
+    public void OnSelectCharacter(string name)
+    {
+        characterName = name;
+        PlayerPrefs.SetString(selectedCharacter, name);
+    }
+
     public void OnInputChange()
     {
         if (usernameInput.text.Length >= 3)

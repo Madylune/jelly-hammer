@@ -46,7 +46,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: f7f4594065adc41c2b24798b084b67b0, type: 2}
+  m_Motion: {fileID: 7400000, guid: ab9b7424343d54db3824ad7584deabd7, type: 2}
   m_Tag: Attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -140,7 +140,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Player
+  m_Name: Raccoon
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: IsWalking
@@ -257,7 +257,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: b59afabeeeaf2434289f57e0cf6e1bba, type: 2}
+  m_Motion: {fileID: 7400000, guid: ff87bae95306144acab93271d0f79405, type: 2}
   m_Tag: Attack
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -307,7 +307,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 22a7830ed9ea84e0cae9d0df6bc0ba59, type: 2}
+  m_Motion: {fileID: 7400000, guid: aea28617a77a64e07b5ffba9a3361bc5, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -360,7 +360,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 08a17b0244fbd431e8046aeef25da71b, type: 2}
+  m_Motion: {fileID: 7400000, guid: 1073f3ec3e7b04df3bf312332c7ecdcf, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
