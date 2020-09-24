@@ -21,10 +21,13 @@ public class GameManager : MonoBehaviour
 
     private readonly string selectedCharacter = "SelectedCharacter";
 
+    public string MyCharacter { get; set; }
+
     private void Start()
     {
         string characterName;
         characterName = PlayerPrefs.GetString(selectedCharacter);
+        MyCharacter = characterName;
 
         PhotonNetwork.Instantiate(characterName, transform.position, Quaternion.identity);
     }

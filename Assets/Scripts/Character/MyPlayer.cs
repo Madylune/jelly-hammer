@@ -82,8 +82,15 @@ public class MyPlayer : Character
             animator.SetTrigger("Attack");
             MyRb.velocity = Vector2.zero;
 
-            float attackHitBoxY = GetComponent<BoxCollider2D>().offset.y;
-            attackHitBox.GetComponent<BoxCollider2D>().offset = spriteRenderer.flipX ? new Vector2(-1.45f, attackHitBoxY) : new Vector2(1.45f, attackHitBoxY);
+            float attackHitBoxY = attackHitBox.GetComponent<BoxCollider2D>().offset.y;
+            if (GameManager.MyInstance.MyCharacter == "Panda")
+            {
+                attackHitBox.GetComponent<BoxCollider2D>().offset = spriteRenderer.flipX ? new Vector2(-1.45f, attackHitBoxY) : new Vector2(1.45f, attackHitBoxY);
+            }
+            else if (GameManager.MyInstance.MyCharacter == "Raccoon")
+            {
+                attackHitBox.GetComponent<BoxCollider2D>().offset = spriteRenderer.flipX ? new Vector2(-0.96f, attackHitBoxY) : new Vector2(0.96f, attackHitBoxY);
+            }
             attackHitBox.SetActive(true);
 
             yield return new WaitForSeconds(.5f);
