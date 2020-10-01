@@ -23,6 +23,9 @@ public class GameManager : MonoBehaviour
 
     public string MyCharacter { get; set; }
 
+    [SerializeField]
+    private Transform[] spawnPoints;
+
     private void Start()
     {
         string characterName;
