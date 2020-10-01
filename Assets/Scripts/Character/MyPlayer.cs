@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using Photon.Pun;
 
 public class MyPlayer : Character
 {
@@ -22,8 +23,6 @@ public class MyPlayer : Character
     public int MyDiamonds { get => diamonds; set => diamonds = value; }
     public int MyBombs { get => bombs; set => bombs = value; }
     public int MyAttackDamage { get => attackDamage;  }
-    public Vector3 MySmoothMove { get => smoothMove; set => smoothMove = value; }
-    public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
     public Rigidbody2D MyRb { get => rb; set => rb = value; }
     public float MyMoveSpeed { get => moveSpeed; set => moveSpeed = value; }
 
@@ -49,18 +48,15 @@ public class MyPlayer : Character
     private Rigidbody2D rb;
 
     [SerializeField]
-    private GameObject attackHitBox;
-
-    [SerializeField]
     private Text usernameText;
 
-    private bool isAttacking;
-
-    private Vector3 smoothMove;
+    private PhotonView photonView;
 
     public override void Start()
     {
-        attackHitBox.SetActive(false);
+        photonView = GetComponent<PhotonView>();
+        MyName = photonView.Owner.NickName;
+
         base.Start();
     }
 
@@ -69,47 +65,9 @@ public class MyPlayer : Character
         usernameText.text = MyName;
     }
 
-    private void FixedUpdate()
-    {
-        StartCoroutine(Attack());
-        ResetValues();
-    }
-
-    private IEnumerator Attack()
-    {
-        if (isAttacking && !animator.GetCurrentAnimatorStateInfo(0).IsTag("Attack"))
-        {
-            animator.SetTrigger("Attack");
-            MyRb.velocity = Vector2.zero;
-
-            float attackHitBoxY = attackHitBox.GetComponent<BoxCollider2D>().offset.y;
-            if (GameManager.MyInstance.MyCharacter == "Panda")
-            {
-                attackHitBox.GetComponent<BoxCollider2D>().offset = spriteRenderer.flipX ? new Vector2(-1.45f, attackHitBoxY) : new Vector2(1.45f, attackHitBoxY);
-            }
-            else if (GameManager.MyInstance.MyCharacter == "Raccoon")
-            {
-                attackHitBox.GetComponent<BoxCollider2D>().offset = spriteRenderer.flipX ? new Vector2(-0.96f, attackHitBoxY) : new Vector2(0.96f, attackHitBoxY);
-            }
-            attackHitBox.SetActive(true);
-
-            yield return new WaitForSeconds(.5f);
-
-            attackHitBox.SetActive(false);
-            isAttacking = false;
-        }
-    }
-
     public void EarnPoints(float _points)
     {
         MyScore += _points;
-    }
-
-    public void SmoothMovement()
-    {
-        transform.position = Vector3.Lerp(transform.position, MySmoothMove, Time.deltaTime * 10);
-        Flip(MySmoothMove.x);
-        AnimateWalk(MySmoothMove);
     }
 
     public void AnimateWalk(Vector2 move)
@@ -126,7 +84,7 @@ public class MyPlayer : Character
 
     public void DropBomb()
     {
-        Vector2 position = spriteRenderer.flipX ? new Vector2((transform.position.x + 1), transform.position.y) : new Vector2((transform.position.x - 1), transform.position.y);
+        Vector2 position = MySpriteRenderer.flipX ? new Vector2((transform.position.x + 1), transform.position.y) : new Vector2((transform.position.x - 1), transform.position.y);
         Instantiate(dropBomb, position, Quaternion.identity);
         bombs--;
     }
@@ -146,10 +104,5 @@ public class MyPlayer : Character
             }
             Destroy(collision.gameObject);
         }
-    }
-
-    private void ResetValues()
-    {
-        isAttacking = false;
     }
 }

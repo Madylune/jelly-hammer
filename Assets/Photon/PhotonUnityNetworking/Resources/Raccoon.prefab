@@ -173,8 +173,9 @@ GameObject:
   - component: {fileID: 5346907702574670497}
   - component: {fileID: 6359910845138948819}
   - component: {fileID: 5599931326398027426}
-  - component: {fileID: 7750079563012454437}
   - component: {fileID: 8938830771630599775}
+  - component: {fileID: 505526385907305782}
+  - component: {fileID: -4290391480559890142}
   m_Layer: 9
   m_Name: Raccoon
   m_TagString: Player
@@ -339,7 +340,6 @@ MonoBehaviour:
   dropBomb: {fileID: 6257137950629017934, guid: 236aae7eee6f942ccada005ae41a0222,
     type: 3}
   rb: {fileID: 6993726673528623617}
-  attackHitBox: {fileID: 1717520594082481966}
   usernameText: {fileID: 9040675358612403818}
 --- !u!114 &5346907702574670497
 MonoBehaviour:
@@ -411,25 +411,11 @@ MonoBehaviour:
   ObservedComponents:
   - {fileID: 5346907702574670497}
   - {fileID: 6359910845138948819}
-  - {fileID: 7750079563012454437}
+  - {fileID: 505526385907305782}
+  - {fileID: -4290391480559890142}
   viewIdField: 0
   InstantiationId: 0
   isRuntimeInstantiated: 0
---- !u!114 &7750079563012454437
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4964321917413881361}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d138002cbc58244fcac8c14495138d34, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  scriptsToIgnore:
-  - {fileID: 8938830771630599775}
-  - {fileID: 7750079563012454437}
 --- !u!114 &8938830771630599775
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,6 +428,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a7d92f0e9d7cf411680d176684428a51, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackHitBox: {fileID: 1717520594082481966}
+--- !u!114 &505526385907305782
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964321917413881361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e79886111d4e44cff8dc0cf83ddc2898, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-4290391480559890142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4964321917413881361}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsWalking
+  - Type: 9
+    SynchronizeType: 1
+    Name: Attack
+  - Type: 9
+    SynchronizeType: 1
+    Name: Hurt
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsDead
+  - Type: 9
+    SynchronizeType: 1
+    Name: Stun
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0
 --- !u!1 &5881480944278520074
 GameObject:
   m_ObjectHideFlags: 0

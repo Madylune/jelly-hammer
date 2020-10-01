@@ -27,34 +27,34 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        waveCountdown = timeBetweenWaves;
+        //waveCountdown = timeBetweenWaves;
     }
 
     private void Update()
     {
-        if (state == SpawnState.WAITING)
-        {
-            if (!EnemyIsAlive())
-            {
-                WaveCompleted();
-            }
-            else
-            {
-                return;
-            }
-        }
+        //if (state == SpawnState.WAITING)
+        //{
+        //    if (!EnemyIsAlive())
+        //    {
+        //        WaveCompleted();
+        //    }
+        //    else
+        //    {
+        //        return;
+        //    }
+        //}
 
-        if (waveCountdown <= 0)
-        {
-            if (state != SpawnState.SPAWNING)
-            {
-                StartCoroutine(SpawnWave(waves[nextWave]));
-            }
-        }
-        else
-        {
-            waveCountdown -= Time.deltaTime;
-        }
+        //if (waveCountdown <= 0)
+        //{
+        //    if (state != SpawnState.SPAWNING)
+        //    {
+        //        StartCoroutine(SpawnWave(waves[nextWave]));
+        //    }
+        //}
+        //else
+        //{
+        //    waveCountdown -= Time.deltaTime;
+        //}
     }
 
     void WaveCompleted()

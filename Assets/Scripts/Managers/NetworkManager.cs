@@ -4,7 +4,7 @@ using UnityEngine;
 using Photon.Pun;
 using Photon.Realtime;
 
-public class Launcher : MonoBehaviourPunCallbacks
+public class NetworkManager : MonoBehaviourPunCallbacks
 {
     public GameObject loadingScreen;
     public GameObject disconnectedScreen;
@@ -43,5 +43,10 @@ public class Launcher : MonoBehaviourPunCallbacks
     public override void OnJoinRoomFailed(short returnCode, string message)
     {
         print("Room Joined Failed: " + returnCode + "Message: " + message);
+    }
+
+    public void QuitGame()
+    {
+        Application.Quit();
     }
 }

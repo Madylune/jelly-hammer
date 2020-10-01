@@ -25,6 +25,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private Text username, score, diamonds, bombs;
 
+    [SerializeField]
+    private CanvasGroup menuPanel;
+
     private void Start()
     {
         if (MyPlayer.MyInstance != null)
@@ -46,6 +49,21 @@ public class UIManager : MonoBehaviour
             diamonds.text = MyPlayer.MyInstance.MyDiamonds.ToString();
             bombs.text = MyPlayer.MyInstance.MyBombs.ToString();
         }
+
+        HandleInputs();
     }
 
+    private void HandleInputs()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            TogglePanel(menuPanel);
+        }
+    }
+
+    public void TogglePanel(CanvasGroup canvasGroup)
+    {
+        canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1;
+        canvasGroup.blocksRaycasts = canvasGroup.alpha > 0 ? true : false;
+    }
 }

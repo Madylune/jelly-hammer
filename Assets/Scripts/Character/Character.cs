@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Photon.Pun;
 
 public abstract class Character : MonoBehaviour
 {
@@ -16,7 +17,7 @@ public abstract class Character : MonoBehaviour
 
     protected Animator animator;
 
-    protected SpriteRenderer spriteRenderer;
+    private SpriteRenderer spriteRenderer;
 
     public bool isDead;
 
@@ -24,11 +25,12 @@ public abstract class Character : MonoBehaviour
 
     public string MyName { get => name; set => name = value; }
     public Sprite MySprite { get => sprite; }
+    public SpriteRenderer MySpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
 
     public virtual void Start()
     {
         animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        MySpriteRenderer = GetComponent<SpriteRenderer>();
 
         CheckPointPosition = transform.position;
         currentHealth = maxHealth;
@@ -74,11 +76,11 @@ public abstract class Character : MonoBehaviour
     {
         if (velocity > 0.1f)
         {
-            spriteRenderer.flipX = false;
+            MySpriteRenderer.flipX = false;
         }
         else if (velocity < -0.1f)
         {
-            spriteRenderer.flipX = true;
+            MySpriteRenderer.flipX = true;
         }
     }
 }
