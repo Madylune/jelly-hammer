@@ -5,12 +5,13 @@ using Photon.Pun;
 
 public class PlayerNetworkSync : MonoBehaviourPun, IPunObservable
 {
-    private Vector3 playerPos;
-    //private Quaternion playerRot;
+    private Vector3 _playerPos;
+    private SpriteRenderer _spriteRenderer;
     private PhotonView _photonView;
 
     private void Start()
     {
+        _spriteRenderer = GetComponent<SpriteRenderer>();
         _photonView = GetComponent<PhotonView>();
     }
 
@@ -18,23 +19,22 @@ public class PlayerNetworkSync : MonoBehaviourPun, IPunObservable
     {
         if (!photonView.IsMine)
         {
-            transform.position = Vector3.Lerp(transform.position, this.playerPos, Time.deltaTime * 5);
-            //transform.rotation = Quaternion.Lerp(transform.rotation, this.playerRot, Time.deltaTime * 5);
+            transform.position = Vector3.Lerp(transform.position, this._playerPos, Time.deltaTime * 5);
         }
     }
 
-    // See others players movement + smooth move
+    // Handle others players movement and get them smooth
     public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
     {
-        if (stream.IsWriting)
+        if (stream.IsWriting) //Send to others our data
         {
             stream.SendNext(transform.position);
-            //stream.SendNext(transform.rotation);
+            stream.SendNext(_spriteRenderer.flipX);
         }
-        else
+        else // network players, receive data
         {
-            this.playerPos = (Vector3)stream.ReceiveNext();
-            //this.playerRot = (Quaternion)stream.ReceiveNext();
+            this._playerPos = (Vector3)stream.ReceiveNext();
+            this._spriteRenderer.flipX = (bool)stream.ReceiveNext();
         }
     }
 }
