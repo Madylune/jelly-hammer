@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
 
-public abstract class Character : MonoBehaviour
+public abstract class Character : MonoBehaviourPun
 {
     [SerializeField]
     private string name;
@@ -13,7 +13,8 @@ public abstract class Character : MonoBehaviour
 
     int maxHealth = 100;
 
-    int currentHealth;
+    [SerializeField]
+    private int currentHealth;
 
     protected Animator animator;
 
@@ -26,23 +27,27 @@ public abstract class Character : MonoBehaviour
     public string MyName { get => name; set => name = value; }
     public Sprite MySprite { get => sprite; }
     public SpriteRenderer MySpriteRenderer { get => spriteRenderer; set => spriteRenderer = value; }
+    public int MyCurrentHealth { get => currentHealth; set => currentHealth = value; }
+
+    private PhotonView _photonView;
 
     public virtual void Start()
     {
         animator = GetComponent<Animator>();
         MySpriteRenderer = GetComponent<SpriteRenderer>();
+        _photonView = GetComponent<PhotonView>();
 
         CheckPointPosition = transform.position;
-        currentHealth = maxHealth;
+        MyCurrentHealth = maxHealth;
     }
 
     public void TakeDamage(int damage)
     {
-        currentHealth -= damage;
+        MyCurrentHealth -= damage;
 
         animator.SetTrigger("Hurt");
 
-        if (currentHealth <= 0)
+        if (MyCurrentHealth <= 0)
         {
             isDead = true;
             StartCoroutine(Die());
@@ -67,9 +72,10 @@ public abstract class Character : MonoBehaviour
         GetComponent<Collider2D>().enabled = false;
         this.enabled = false;
 
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(2f);
 
         Destroy(gameObject);
+        PhotonNetwork.Destroy(this._photonView);
     }
 
     public void Flip(float velocity)

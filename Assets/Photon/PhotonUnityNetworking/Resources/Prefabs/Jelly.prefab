@@ -13,6 +13,9 @@ GameObject:
   - component: {fileID: 3914921610179298197}
   - component: {fileID: 3914921610179298194}
   - component: {fileID: 3914921610179298195}
+  - component: {fileID: 2723448903090906488}
+  - component: {fileID: 8521160308601197982}
+  - component: {fileID: 3332282041492466994}
   m_Layer: 8
   m_Name: Jelly
   m_TagString: Enemy
@@ -145,6 +148,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   name: Jelly
   sprite: {fileID: 2474558739052935623, guid: c2b58c3c069414ecba4493632f733eb2, type: 3}
+  currentHealth: 0
   isDead: 0
   points: 350
   loots: {fileID: 11400000, guid: e17c45d81b14942e7b91cc2b9d2c9edf, type: 2}
@@ -153,3 +157,65 @@ MonoBehaviour:
   minY: -9
   maxY: 6
   startWaitTime: 3
+--- !u!114 &2723448903090906488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914921610179298198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  observableSearch: 0
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 8521160308601197982}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &8521160308601197982
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914921610179298198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
+--- !u!114 &3332282041492466994
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3914921610179298198}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b8c4a61274f60b4ea5fb4299cfdbf14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ShowLayerWeightsInspector: 1
+  ShowParameterInspector: 1
+  m_SynchronizeParameters:
+  - Type: 9
+    SynchronizeType: 1
+    Name: Hurt
+  - Type: 4
+    SynchronizeType: 1
+    Name: IsDead
+  m_SynchronizeLayers:
+  - SynchronizeType: 0
+    LayerIndex: 0

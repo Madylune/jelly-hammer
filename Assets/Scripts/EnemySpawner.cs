@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Photon.Pun;
 using UnityEngine;
 
 public class EnemySpawner : MonoBehaviour
@@ -27,34 +28,34 @@ public class EnemySpawner : MonoBehaviour
 
     private void Start()
     {
-        //waveCountdown = timeBetweenWaves;
+        waveCountdown = timeBetweenWaves;
     }
 
     private void Update()
     {
-        //if (state == SpawnState.WAITING)
-        //{
-        //    if (!EnemyIsAlive())
-        //    {
-        //        WaveCompleted();
-        //    }
-        //    else
-        //    {
-        //        return;
-        //    }
-        //}
+        if (state == SpawnState.WAITING)
+        {
+            if (!EnemyIsAlive())
+            {
+                WaveCompleted();
+            }
+            else
+            {
+                return;
+            }
+        }
 
-        //if (waveCountdown <= 0)
-        //{
-        //    if (state != SpawnState.SPAWNING)
-        //    {
-        //        StartCoroutine(SpawnWave(waves[nextWave]));
-        //    }
-        //}
-        //else
-        //{
-        //    waveCountdown -= Time.deltaTime;
-        //}
+        if (waveCountdown <= 0)
+        {
+            if (state != SpawnState.SPAWNING)
+            {
+                StartCoroutine(SpawnWave(waves[nextWave]));
+            }
+        }
+        else
+        {
+            waveCountdown -= Time.deltaTime;
+        }
     }
 
     void WaveCompleted()
@@ -105,6 +106,6 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy(Enemy _enemy)
     {
         Vector2 position = new Vector2(Random.Range(_enemy.MyMinX, _enemy.MyMaxX), Random.Range(_enemy.MyMinY, _enemy.MyMaxY));
-        Instantiate(_enemy, position, transform.rotation);
+        PhotonNetwork.Instantiate("Prefabs/" + _enemy.MyName, position, transform.rotation);
     }
 }

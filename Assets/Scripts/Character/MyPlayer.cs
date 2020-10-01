@@ -78,21 +78,4 @@ public class MyPlayer : Character
             animator.SetBool("IsWalking", true);
         }
     }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.tag == "Loot")
-        {
-            string collisionName = collision.GetComponent<Loot>().lootName;
-            if (collisionName == "Diamond")
-            {
-                MyDiamonds++;
-            }
-            if (collisionName == "Bomb")
-            {
-                MyBombs++;
-            }
-            Destroy(collision.gameObject);
-        }
-    }
 }
