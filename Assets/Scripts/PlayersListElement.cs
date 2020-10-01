@@ -12,6 +12,9 @@ public class PlayersListElement : MonoBehaviour
     [SerializeField]
     private Image playerImage;
 
+    [SerializeField]
+    private Sprite[] sprites;
+
     private Player player;
     public Player Player { get => player; set => player = value; }
 
@@ -19,6 +22,9 @@ public class PlayersListElement : MonoBehaviour
     {
         Player = _player;
         playerName.text = _player.NickName;
-        //playerImage.sprite = player.CustomProperties.
+
+        string _playerSprite = (string)player.CustomProperties["PlayerSprite"];
+        Sprite _sprite = (_playerSprite == "Panda") ? sprites[0] : sprites[1];
+        playerImage.sprite = _sprite;
     }
 }

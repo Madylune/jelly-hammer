@@ -22,6 +22,8 @@ public class PlayerInfos : MonoBehaviour
 
     private readonly string selectedCharacter = "SelectedCharacter";
 
+    private ExitGames.Client.Photon.Hashtable _playerCustomProps = new ExitGames.Client.Photon.Hashtable();
+
     private void Awake()
     {
         characterName = PlayerPrefs.GetString(selectedCharacter);
@@ -42,6 +44,8 @@ public class PlayerInfos : MonoBehaviour
             if (character.name == characterName)
             {
                 character.transform.GetChild(0).gameObject.SetActive(true);
+                PhotonNetwork.SetPlayerCustomProperties(_playerCustomProps);
+                _playerCustomProps["PlayerSprite"] = characterName;
             }
             else
             {
@@ -54,6 +58,9 @@ public class PlayerInfos : MonoBehaviour
     {
         characterName = name;
         PlayerPrefs.SetString(selectedCharacter, name);
+
+        PhotonNetwork.SetPlayerCustomProperties(_playerCustomProps);
+        _playerCustomProps["PlayerSprite"] = name;
     }
 
     public void OnInputChange()
