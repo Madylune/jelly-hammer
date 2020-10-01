@@ -30,8 +30,6 @@ public class GameManager : MonoBehaviour
         MyCharacter = characterName;
 
         PhotonNetwork.Instantiate(characterName, transform.position, Quaternion.identity);
-
-        //Debug.Log("IsMaster: " + PhotonNetwork.IsMasterClient);
     }
 
     public void QuitGame()

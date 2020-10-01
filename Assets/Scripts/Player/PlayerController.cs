@@ -12,6 +12,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private GameObject attackHitBox;
 
+    [SerializeField]
+    private DropBomb dropBomb;
+
     private bool isAttacking;
     public bool IsAttacking { get => isAttacking; set => isAttacking = value; }
 
@@ -43,9 +46,14 @@ public class PlayerController : MonoBehaviour
             IsAttacking = true;
         }
 
+        if (Input.GetKeyDown(KeyCode.V))
+        {
+            myPlayer.MyBombs++;
+        }
+
         if (Input.GetKeyDown(KeyCode.B) && myPlayer.MyBombs > 0)
         {
-            myPlayer.DropBomb();
+            DropBomb();
         }
     }
 
@@ -94,6 +102,16 @@ public class PlayerController : MonoBehaviour
                 attackHitBox.SetActive(false);
                 isAttacking = false;
             }
+        }
+    }
+
+    public void DropBomb()
+    {
+        if (photonView.IsMine)
+        {
+            Vector2 position = myPlayer.MySpriteRenderer.flipX ? new Vector2((transform.position.x + 1), transform.position.y) : new Vector2((transform.position.x - 1), transform.position.y);
+            Instantiate(dropBomb, position, Quaternion.identity);
+            myPlayer.MyBombs--;
         }
     }
 

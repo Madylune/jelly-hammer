@@ -42,9 +42,6 @@ public class MyPlayer : Character
     private int bombs;
 
     [SerializeField]
-    private DropBomb dropBomb;
-
-    [SerializeField]
     private Rigidbody2D rb;
 
     [SerializeField]
@@ -80,13 +77,6 @@ public class MyPlayer : Character
         {
             animator.SetBool("IsWalking", true);
         }
-    }
-
-    public void DropBomb()
-    {
-        Vector2 position = MySpriteRenderer.flipX ? new Vector2((transform.position.x + 1), transform.position.y) : new Vector2((transform.position.x - 1), transform.position.y);
-        Instantiate(dropBomb, position, Quaternion.identity);
-        bombs--;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

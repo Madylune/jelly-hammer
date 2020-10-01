@@ -337,8 +337,6 @@ MonoBehaviour:
   score: 0
   diamonds: 0
   bombs: 0
-  dropBomb: {fileID: 6257137950629017934, guid: 236aae7eee6f942ccada005ae41a0222,
-    type: 3}
   rb: {fileID: 6993726673528623617}
   usernameText: {fileID: 9040675358612403818}
 --- !u!114 &5346907702574670497
@@ -429,6 +427,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackHitBox: {fileID: 1717520594082481966}
+  dropBomb: {fileID: 6257137950629017934, guid: 236aae7eee6f942ccada005ae41a0222,
+    type: 3}
 --- !u!114 &505526385907305782
 MonoBehaviour:
   m_ObjectHideFlags: 0
