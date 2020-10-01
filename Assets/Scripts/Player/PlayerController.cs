@@ -110,7 +110,7 @@ public class PlayerController : MonoBehaviour
         if (photonView.IsMine)
         {
             Vector2 position = myPlayer.MySpriteRenderer.flipX ? new Vector2((transform.position.x + 1), transform.position.y) : new Vector2((transform.position.x - 1), transform.position.y);
-            Instantiate(dropBomb, position, Quaternion.identity);
+            PhotonNetwork.Instantiate("Prefabs/" + dropBomb.name, position, Quaternion.identity);
             myPlayer.MyBombs--;
         }
     }

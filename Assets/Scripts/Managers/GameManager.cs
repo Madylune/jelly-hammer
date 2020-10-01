@@ -29,7 +29,7 @@ public class GameManager : MonoBehaviour
         characterName = PlayerPrefs.GetString(selectedCharacter);
         MyCharacter = characterName;
 
-        PhotonNetwork.Instantiate(characterName, transform.position, Quaternion.identity);
+        PhotonNetwork.Instantiate("Prefabs/" + characterName, transform.position, Quaternion.identity);
     }
 
     public void QuitGame()
