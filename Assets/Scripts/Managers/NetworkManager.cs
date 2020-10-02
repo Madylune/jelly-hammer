@@ -6,10 +6,24 @@ using Photon.Realtime;
 
 public class NetworkManager : MonoBehaviourPunCallbacks
 {
+    private static NetworkManager instance;
+
+    public static NetworkManager MyInstance
+    {
+        get
+        {
+            if (instance == null)
+            {
+                instance = GameObject.FindObjectOfType<NetworkManager>();
+            }
+            return instance;
+        }
+    }
+
     public GameObject loadingScreen;
     public GameObject disconnectedScreen;
 
-    public void OnStartClick()
+    public void StartGame()
     {
         loadingScreen.SetActive(true);
         PhotonNetwork.ConnectUsingSettings();

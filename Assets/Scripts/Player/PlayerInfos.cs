@@ -75,7 +75,7 @@ public class PlayerInfos : MonoBehaviour
         }
     }
 
-    public void SetName()
+    public void OnSubmitCharacter()
     {
         PhotonNetwork.NickName = usernameInput.text;
 
@@ -84,5 +84,7 @@ public class PlayerInfos : MonoBehaviour
 
         usernameOutput.text = PhotonNetwork.NickName;
         usernameOutput.gameObject.SetActive(true);
+
+        NetworkManager.MyInstance.StartGame();
     }
 }
