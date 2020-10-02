@@ -608,6 +608,9 @@ MonoBehaviour:
   diamonds: {fileID: 721821161}
   bombs: {fileID: 901853094}
   menuPanel: {fileID: 447134354}
+  gameInformation: {fileID: 7078345919160799297, guid: 65d3c8973d8284f4a9f8f1af8a8e6c4d,
+    type: 3}
+  canvas: {fileID: 705546899}
 --- !u!1 &467055274
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,6 +28,9 @@ public class UIManager : MonoBehaviour
     [SerializeField]
     private CanvasGroup menuPanel;
 
+    [SerializeField]
+    private GameObject gameInformation, canvas;
+
     private void Start()
     {
         if (MyPlayer.MyInstance != null)
@@ -65,5 +68,11 @@ public class UIManager : MonoBehaviour
     {
         canvasGroup.alpha = canvasGroup.alpha > 0 ? 0 : 1;
         canvasGroup.blocksRaycasts = canvasGroup.alpha > 0 ? true : false;
+    }
+
+    public void WriteGameInformation(string _message)
+    {
+        Text gameInfoText = Instantiate(gameInformation, canvas.transform).GetComponent<Text>();
+        gameInfoText.text = _message;
     }
 }

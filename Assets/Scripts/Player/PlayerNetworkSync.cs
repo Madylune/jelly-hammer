@@ -17,6 +17,11 @@ public class PlayerNetworkSync : MonoBehaviourPun, IPunObservable
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _photonView = GetComponent<PhotonView>();
         _myPlayer = GetComponent<MyPlayer>();
+
+        if (_photonView.IsMine)
+        {
+            _photonView.RPC("ShowGameInformation", RpcTarget.All, _myPlayer.MyName + " is entered into the party !");
+        }
     }
 
     private void Update()
@@ -51,5 +56,11 @@ public class PlayerNetworkSync : MonoBehaviourPun, IPunObservable
             this._playerPos = (Vector3)stream.ReceiveNext();
             this._spriteRenderer.flipX = (bool)stream.ReceiveNext();
         }
+    }
+
+    [PunRPC]
+    void ShowGameInformation(string _message)
+    {
+        UIManager.MyInstance.WriteGameInformation(_message);
     }
 }
