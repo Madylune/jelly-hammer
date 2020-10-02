@@ -26,5 +26,23 @@ public class PlayersListElement : MonoBehaviour
         string _playerSprite = (string)player.CustomProperties["PlayerSprite"];
         Sprite _sprite = (_playerSprite == "Panda") ? sprites[0] : sprites[1];
         playerImage.sprite = _sprite;
+
+        switch (_player.ActorNumber)
+        {
+            case 1:
+                gameObject.GetComponent<Image>().color = new Color32(57, 80, 246, 255); //Blue
+                break;
+            case 2:
+                gameObject.GetComponent<Image>().color = new Color32(241, 62, 73, 255); //Red
+                break;
+            case 3:
+                gameObject.GetComponent<Image>().color = new Color32(241, 199, 62, 255); //Yellow
+                break;
+            case 4:
+                gameObject.GetComponent<Image>().color = new Color32(80, 181, 100, 255); //Green
+                break;
+            default:
+                break;
+        }
     }
 }
