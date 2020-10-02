@@ -106,6 +106,10 @@ public class EnemySpawner : MonoBehaviour
     void SpawnEnemy(Enemy _enemy)
     {
         Vector2 position = new Vector2(Random.Range(_enemy.MyMinX, _enemy.MyMaxX), Random.Range(_enemy.MyMinY, _enemy.MyMaxY));
-        PhotonNetwork.Instantiate("Prefabs/" + _enemy.MyName, position, transform.rotation);
+
+        if (PhotonNetwork.IsMasterClient)
+        {
+            PhotonNetwork.Instantiate("Prefabs/" + _enemy.MyName, position, transform.rotation);
+        }
     }
 }

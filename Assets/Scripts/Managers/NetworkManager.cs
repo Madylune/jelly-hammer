@@ -29,7 +29,7 @@ public class NetworkManager : MonoBehaviourPunCallbacks
         PhotonNetwork.ConnectUsingSettings();
     }
 
-    public override void OnConnectedToMaster()
+    public override void OnConnectedToMaster() //Master Server
     {
         PhotonNetwork.JoinLobby(TypedLobby.Default);
     }

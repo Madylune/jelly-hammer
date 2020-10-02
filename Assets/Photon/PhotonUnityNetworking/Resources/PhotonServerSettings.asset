@@ -42,6 +42,7 @@ MonoBehaviour:
   - OnDirectionChange_RIGHT
   - RPC_GetTeam
   - RPC_SentTeam
+  - DestroyEnemy
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

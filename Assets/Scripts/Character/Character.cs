@@ -65,17 +65,25 @@ public abstract class Character : MonoBehaviourPun
 
         if (this is Enemy)
         {
-            this.GetComponent<Enemy>().GetLoots();
+            GetComponent<Enemy>().GetLoots();
             MyPlayer.MyInstance.EarnPoints(((Enemy)this).MyPoints);
+
+            GetComponent<Collider2D>().enabled = false;
+            enabled = false;
+
+            yield return new WaitForSeconds(2f);
+
+            DestroyEnemy(_photonView.ViewID);
         }
+    }
 
-        GetComponent<Collider2D>().enabled = false;
-        this.enabled = false;
-
-        yield return new WaitForSeconds(2f);
-
-        Destroy(gameObject);
-        PhotonNetwork.Destroy(gameObject);
+    [PunRPC]
+    void DestroyEnemy(int viewID)
+    {
+        GameObject go = PhotonView.Find(viewID).gameObject;
+        Destroy(go);
+        PhotonNetwork.Destroy(go);
+        _photonView.RPC("DestroyEnemy", RpcTarget.AllBuffered, viewID);
     }
 
     public void Flip(float velocity)
