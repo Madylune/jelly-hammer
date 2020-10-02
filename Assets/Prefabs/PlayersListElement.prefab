@@ -92,6 +92,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 4164379158349773568}
+  playerScore: {fileID: 4164379158919986204}
   playerImage: {fileID: 4164379157818365471}
   sprites:
   - {fileID: 21300000, guid: 6bc99f08ca83d44008950e196a51d606, type: 3}

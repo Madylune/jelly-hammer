@@ -62,7 +62,7 @@ public class MyPlayer : Character
         usernameText.text = MyName;
     }
 
-    public void EarnPoints(float _points)
+    public void UpdateScore(float _points)
     {
         MyScore += _points;
     }

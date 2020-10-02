@@ -7,7 +7,7 @@ using UnityEngine.UI;
 public class PlayersListElement : MonoBehaviour
 {
     [SerializeField]
-    private Text playerName;
+    private Text playerName, playerScore;
 
     [SerializeField]
     private Image playerImage;
@@ -17,6 +17,12 @@ public class PlayersListElement : MonoBehaviour
 
     private Player player;
     public Player Player { get => player; set => player = value; }
+
+    private void Update()
+    {
+        float _score = (float)player.CustomProperties["PlayerScore"];
+        playerScore.text = _score.ToString() + " pts";
+    }
 
     public void SetPlayerInfo(Player _player)
     {

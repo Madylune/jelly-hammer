@@ -66,7 +66,7 @@ public abstract class Character : MonoBehaviourPun
         if (this is Enemy)
         {
             GetComponent<Enemy>().GetLoots();
-            MyPlayer.MyInstance.EarnPoints(((Enemy)this).MyPoints);
+            MyPlayer.MyInstance.UpdateScore(((Enemy)this).MyPoints);
 
             GetComponent<Collider2D>().enabled = false;
             enabled = false;
