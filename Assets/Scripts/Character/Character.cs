@@ -75,7 +75,7 @@ public abstract class Character : MonoBehaviourPun
         yield return new WaitForSeconds(2f);
 
         Destroy(gameObject);
-        PhotonNetwork.Destroy(this._photonView);
+        PhotonNetwork.Destroy(gameObject);
     }
 
     public void Flip(float velocity)

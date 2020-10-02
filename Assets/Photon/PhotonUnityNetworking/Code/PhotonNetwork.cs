@@ -2618,7 +2618,7 @@ namespace Photon.Pun
         /// - GameObject can be destroyed while client is not in a room.
         /// </remarks>
         /// <returns>Nothing. Check error debug log for any issues.</returns>
-        public static void Destroy(PhotonView targetView)
+        public static void Destroy(PhotonView targetView, float v)
         {
             if (targetView != null)
             {

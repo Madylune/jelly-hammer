@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Photon.Pun;
 using UnityEngine;
 
-public class Enemy : Character, IPunObservable
+public class Enemy : Character
 {
     private Vector2 moveSpot;
 
@@ -85,9 +85,7 @@ public class Enemy : Character, IPunObservable
 
     private void InstantiateLoot(GameObject _loot)
     {
-        GameObject loot = PhotonNetwork.Instantiate("Prefabs/Loots/" + _loot.gameObject.name, transform.position, Quaternion.identity);
-
-        Destroy(loot, 3f);
+        PhotonNetwork.Instantiate("Prefabs/Loots/" + _loot.gameObject.name, transform.position, Quaternion.identity);        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -95,20 +93,6 @@ public class Enemy : Character, IPunObservable
         if (collision.gameObject.name == "AttackHitBox")
         {
             TakeDamage(collision.GetComponentInParent<MyPlayer>().MyAttackDamage);
-        }
-    }
-
-    public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
-    {
-        if (stream.IsWriting) //Send to others our data
-        {
-            stream.SendNext(transform.position);
-            stream.SendNext(MySpriteRenderer.flipX);
-        }
-        else // network players, receive data
-        {
-            this._position = (Vector3)stream.ReceiveNext();
-            this.MySpriteRenderer.flipX = (bool)stream.ReceiveNext();
         }
     }
 }

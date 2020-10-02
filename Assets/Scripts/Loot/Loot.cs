@@ -9,11 +9,9 @@ public class Loot : MonoBehaviourPun
     public int lootChance;
     public string lootName;
 
-    private PhotonView _photonView;
-
     private void Start()
     {
-        _photonView = GetComponent<PhotonView>();
+        Destroy(gameObject, 3f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -30,7 +28,6 @@ public class Loot : MonoBehaviourPun
             }
 
             Destroy(gameObject);
-            PhotonNetwork.Destroy(_photonView);
             
         }
     }

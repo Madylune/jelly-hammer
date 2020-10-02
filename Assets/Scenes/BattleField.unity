@@ -552,13 +552,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemy: {fileID: 3914921610179298195, guid: 7ded0a5330bad4df78798952a2559136, type: 3}
-    count: 10
+    count: 5
     rate: 1
   - enemy: {fileID: 3914921610179298195, guid: 7ded0a5330bad4df78798952a2559136, type: 3}
-    count: 20
+    count: 5
     rate: 1.5
   - enemy: {fileID: 3914921610179298195, guid: 7ded0a5330bad4df78798952a2559136, type: 3}
-    count: 30
+    count: 5
     rate: 2
   timeBetweenWaves: 3
 --- !u!4 &464800355
